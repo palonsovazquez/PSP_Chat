@@ -37,7 +37,7 @@ InputStream is;
 
     @Override
     public void run() {
-        super.run(); //To change body of generated methods, choose Tools | Templates.
+        super.run(); 
         
         
         do {
@@ -45,10 +45,7 @@ InputStream is;
                    if(mn != null){
                     System.out.println("mensaje recibido"+mn);
                     
-//                      ArrayList<Usuario> arrUsua = SQL_Usuario.getUsuarios();
-//                      ArrayList<Chat> arrChat = SQL_Chat.getChats();
-//                     ArrayList<Mensaje> arrMens = SQL_Mensaje.getMensajesDeChat(new Chat(), true);
-                        
+                    
                     ServerSend.broadcast(mn);}
             try {
                 sleep(1000);

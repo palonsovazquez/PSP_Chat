@@ -30,17 +30,17 @@ public class LibreriaSockets {
             byte[] tamanho = new byte[tamanhoToken];
 
             int leido = io.read(tamanho);
-           // //System.out.println("leido"+ leido);
+
             if (leido != -1) {
                 String ss = new String(tamanho);
-             //   //System.out.println(ss);
+         
                 int x = Integer.parseInt(ss);
-                //System.out.println(x);
+                
 
                 byte[] messaje = new byte[x];
                 io.read(messaje);
                 data = new String(messaje);
-             //   //System.out.println("data");
+       
             }
 
         } catch (Exception ex) {
@@ -54,7 +54,7 @@ public class LibreriaSockets {
 
         try {
 
-           // //System.out.println("dataleng" + data.length());
+
 
             Integer s = data.length();
 

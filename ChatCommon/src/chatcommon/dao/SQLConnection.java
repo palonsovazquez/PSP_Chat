@@ -117,7 +117,7 @@ public class SQLConnection {
 
             }
         }
-        //System.out.println(archivo.getAbsolutePath());
+      
         EjecutarSQLFile(archivo);
     }
 
@@ -140,7 +140,7 @@ public class SQLConnection {
      */
     private SQLConnection() {
         if (null == url || !url.canRead()) {
-            //System.out.println("Error, fichero no encontrado.");
+           
             crearDefaults();
 
         } else {
@@ -177,8 +177,7 @@ public class SQLConnection {
      * @param file
      */
     private void EjecutarSQLFile(File file) {
-        //System.out.println(url.getAbsolutePath());
-        //System.out.println("file-" + file.getAbsolutePath());
+       
         ArrayList<String> consultas = new ArrayList<>();
         boolean ok = true;
         if (file.canRead()) {

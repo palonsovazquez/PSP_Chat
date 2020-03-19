@@ -60,7 +60,7 @@ public class ServerSend extends Thread {
                 serverSocket = new ServerSocket();
 
                 System.out.println("Realizando el bind");// InetAddress.getLocalHost()
-                //InetSocketAddress addr = new InetSocketAddress(ipLocal, puertoEnvio);
+               
                 InetSocketAddress addr = new InetSocketAddress( puertoEnvio);
                 System.out.println("ip: " + addr);
 
@@ -69,31 +69,17 @@ public class ServerSend extends Thread {
                
                 do {
                      System.out.println("Aceptando conexiones Send");
-                // conexion Aceptada
+           
                 Socket newSocket = serverSocket.accept();
                  os = newSocket.getOutputStream();
             is = newSocket.getInputStream();
                 String usuarioJson = LibreriaSockets.leerMensaje(is);
                 System.out.println("Send:" + usuarioJson);
-               // Usuario usuario = chatcommon.json.ComunicationJsonParser.importUser(UsuarioJson);
-                
-//                Usuario usersql = SQL_Usuario.getUsuario(usuario.getIdUsuario().toString());
-//                if(usersql == null){
-//                SQL_Usuario.añadirUsuario(usuario);   
-//                usersql = usuario;
-//                }
-
-                // devuelvo los datos para el usuario incluyendo chats y usuarios en los mismos chats
-                //LibreriaSockets.escribirMensaje(newSocket, chatcommon.json.ComunicationJsonParser.exportUsuario(usersql));
+              
                 
                 serverThreatSends.put(usuarioJson, new serverTrheatSend(newSocket,os));
                 serverThreatSends.get(usuarioJson).start();
-//do {
-//                    String mn = LibreriaSockets.leerMensaje(newSocket);
-//                    System.out.println(mn);
-//                    LibreriaSockets.escribirMensaje(newSocket, "de vuelta " + mn);
-//
-//                } while (true);
+
 
             } while (continuar);
 

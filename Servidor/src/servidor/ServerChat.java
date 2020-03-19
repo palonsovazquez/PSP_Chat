@@ -7,10 +7,7 @@ package servidor;
 
 
 
-/**
- *
- * @author usuario1
- */
+
 public class ServerChat {
     private static Integer portSend = 5556;
     private static Integer portReceive = 5555;

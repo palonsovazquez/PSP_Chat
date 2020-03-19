@@ -305,7 +305,7 @@ public class ComunicationJsonParser {
                         SQL_Mensaje.añadirMensaje(mens);
                     } else {
                         System.out.println("Mensaje Existente");
-//SQL_Usuario.updateMen(mens);
+
 
                     }
 
@@ -353,64 +353,4 @@ public class ComunicationJsonParser {
 
 }
 
-//    public static String createNewUsuario(String usuario) {
-//       Usuario user = new   Usuario(usuario,0);
-//      
-//        
-//        String data = "{ \"" + ETIQUETA_USER_NEW+ "\" : \n";
-//        
-//            data += exportUsuario(SQL_Usuario.) +  "]}";
-//
-//        
-//
-//        return data;
-//    }
-//    public static Object jsonToObject(String json) {
-//        String jsonString = json;
-//        Object returnObject = null;
-//        Map<String, Object> retMap = new Gson().fromJson(jsonString, new TypeToken<HashMap<String, Object>>() {
-//        }.getType());
-//
-//        if (retMap.containsKey(ETIQUETA_MENSAJES)) {
-//            System.out.println(retMap.get(ETIQUETA_MENSAJES).getClass());
-//            if (retMap.get(ETIQUETA_MENSAJES).getClass() == ArrayList.class) {
-//                ArrayList<Mensaje> mensajes = (ArrayList<Mensaje>) retMap.get(ETIQUETA_MENSAJES);
-//                for (Mensaje mens : mensajes) {
-//                    Chat.getChatPorID(mens.getChatReceiver().getId()).addMessaje(mens);
-//
-//                }
-//            }
-//
-//        }
-//
-//        if (retMap.containsKey(ETIQUETA_CHAT)) {
-//
-//            if (retMap.get(ETIQUETA_CHAT).getClass() == LinkedTreeMap.class) {
-//                LinkedTreeMap x = (LinkedTreeMap) retMap.get(ETIQUETA_CHAT);
-//                
-//                Double userId = (Double) x.get(ETIQUETA_USER_ID);
-//                ArrayList<Usuario> usuarios =(ArrayList<Usuario>) x.get(ETIQUETA_CHAT_ID);
-//                
-//                returnObject = importMensaje((Map) retMap.get("messaje"));
-//
-//            }
-//
-//        } 
-//        if (retMap.containsKey(ETIQUETA_USER)) {
-//            if (retMap.get(ETIQUETA_USER).getClass() == LinkedTreeMap.class) {
-//                LinkedTreeMap x = (LinkedTreeMap) retMap.get("messaje");
-//                System.out.print(x.get(ETIQUETA_USER_ID));
-//                System.out.print(x.get(ETIQUETA_USER_Name));
-//
-//                returnObject = importMensaje((Map) retMap.get("usuario"));
-//
-//            }
-//        }
-//        return returnObject;
-//    }
-//   public static Map<String, Object> MapToJson(Map<String,String> mapa) {
-//   
-//   
-//   
-//   return new Map<String,Object>();}}
 

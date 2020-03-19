@@ -43,68 +43,7 @@ import java.util.GregorianCalendar;
  */
 public class SQL_Mensaje {
    
-    /**
-    * Este metodo devuelve la mensaje con el id mas alto, que al tener configurada la tabla como autoincrement tambien es la ultima mensaje introducida.
-    * @param Id
-    * @return 
-    */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//     public static Mensaje getUltimaMensaje() {
-//        ArrayList<Mensaje> auxArrlist = new ArrayList<Mensaje>();
-//        Mensaje etiqaux;
-//        // consulta base
-//        try{
-//            Connection connection = SQLConnection.getInstance().getConexion();
-//            String auxConsulta = "SELECT " + Mensaje.getAlias_idMensaje() + "," + Mensaje.getAlias_nombre()
-//                    + "," + Mensaje.getAlias_ejemplo() + "," + Mensaje.getAlias_descripcion() + " FROM "
-//                    + Mensaje.getAlias_tabla() + " WHERE "+ Mensaje.getAlias_idMensaje()+ " = (SELECT MAX( "+Mensaje.getAlias_idMensaje()+ " ) FROM "+Mensaje.getAlias_tabla()+" );";
-//            
-//            
-//              
-//
-//                
-//        
-//            Statement sta = connection.createStatement();
-//       
-//
-//          
-//            ResultSet rs = sta.executeQuery(auxConsulta);
-//
-//            while (rs.next()) {
-//
-//                Integer idEtiqueta = rs.getInt(Mensaje.getAlias_idMensaje());
-//                String nombre = rs.getString(Mensaje.getAlias_nombre());
-//                String ejemplo = rs.getString(Mensaje.getAlias_ejemplo());
-//                String descripcion = rs.getString(Mensaje.getAlias_descripcion());
-//
-//                etiqaux = new Mensaje(idEtiqueta, nombre, ejemplo, descripcion);
-//                auxArrlist.add(etiqaux);
-//
-//            }
-//            rs.close();
-//            sta.close();
-//            connection.close();
-//
-//        } catch (SQLException ex) {
-//            //System.out.println(ex);
-//
-//        }
-//        return auxArrlist.get(0);
-//
-//    }
-
+   
     /**
      * Metodo para agregar una mensaje a la tabla mensajes
      *
@@ -145,40 +84,6 @@ public class SQL_Mensaje {
 
         return hecho;
     }
-//__-----------------------------------------------------------------------------------------------------------------------------------------------------
-//    /**
-//     * Metodo para actualizar una mensaje a la tabla mensajes
-//     *
-//     * @param mensaje recive una mensaje
-//     * @return un true si lo ha hecho correctamente
-//     */
-//    public static boolean updateNombreMensaje(Mensaje mensaje) {
-//        boolean hecho = false;
-//        try {
-//
-//            Connection connection = SQLConnection.getInstance().getConexion();
-//
-//            PreparedStatement preSt = connection.prepareStatement("UPDATE " + Mensaje.getAlias_tabla() + " SET   " + Mensaje.getAlias_nombre() + " = ? WHERE " + Mensaje.getAlias_idMensaje() + " = ?");
-//
-//            preSt.setString(1, mensaje.getIdMensaje().toString());
-//            preSt.setString(2, mensaje.getNombre());
-//           
-//            
-//            //System.out.println("prueba rs = " + preSt.toString());
-//            preSt.executeUpdate();
-//
-//            // //System.out.println(proy.toString());
-//            preSt.close();
-//            connection.close();
-//            hecho = true;
-//
-//        } catch (SQLException ex) {
-//            //System.out.println(ex);
-//            hecho = false;
-//        }
-//
-//        return hecho;
-//    }
 
     /**  
      * Metodo para eliminar de la base de datos un mensaje
@@ -212,38 +117,7 @@ public class SQL_Mensaje {
         return hecho;
     }
 
-    /**
-     * Metodo que añade una etiqueta a la tabla etiqueta
-     *
-     * @param etiqueta recive una etiqueta
-     * @return devuelve true si ha sido correcto.
-     */
-//    public static boolean añadirEtiqueta(Etiqueta etiqueta) {
-//        boolean hecho = false;
-//        try {
-//
-//            Connection connection = SQLConnection.getInstance().getConexion();
-//
-//            PreparedStatement preSt = connection.prepareStatement("INSERT INTO " + Etiqueta.getAlias_tabla() + " ( " + Etiqueta.getAlias_nombre() + "," + Mensaje.getAlias_descripcion() + ")VALUES(?,?);");
-//
-//            preSt.setString(1, etiqueta.getNombre());
-//            preSt.setString(2, etiqueta.getDescripcion());
-//
-//            //System.out.println("prueba rs = " + preSt.toString());
-//            preSt.executeUpdate();
-//
-//            // //System.out.println(proy.toString());
-//            preSt.close();
-//            connection.close();
-//            hecho = true;
-//
-//        } catch (SQLException ex) {
-//            //System.out.println(ex);
-//            hecho = false;
-//        }
-//
-//        return hecho;
-//    }
+   
 
     /**
      * Metodo que devuelve las Mensajes que estan asociadas con las etiquetas de
@@ -262,35 +136,11 @@ public class SQL_Mensaje {
             String auxConsulta = "SELECT " + Mensaje.getAlias_idMensaje() + "," + Mensaje.getAlias_idUsuario()
                     + "," + Mensaje.getAlias_idChat()+ "," + Mensaje.getAlias_texto() +"," + Mensaje.getAlias_Fecha() + " FROM "
                     + Mensaje.getAlias_tabla() + " WHERE " + Mensaje.getAlias_idChat() + " = ? ORDER BY "+ Mensaje.getAlias_Fecha() +" "+ ((orderbyFechaAsc)?"ASC":"DESC")+";";
-            // si la lista no es nula añado un limitante mas a la consulta para que filtre por las etiquetas.
-//            if (arrListEtiquetas != null) {
-//                for (int i = 0; i < arrListEtiquetas.size(); i++) {
-//                    if (i == 0) {
-//                        auxConsulta = auxConsulta + " AND ( " + Mensaje.getAlias_idMensaje() + " IN (SELECT " + Mensaje.getAlias_idMensaje()
-//                                + " FROM etiquetasDeMensajes  WHERE " + Etiqueta.getAlias_idEtiqueta() + "  = ? ";
-//                    }
-//                    if (i > 0) {
-//
-//                        auxConsulta = auxConsulta + " OR " + Etiqueta.getAlias_idEtiqueta() + " = ? ";
-//
-//                    }
-//                    if (i == arrListEtiquetas.size() - 1) {
-//                        auxConsulta = auxConsulta + "))";
-//                    }
-//
-//                }
-//            }
-            //System.out.println("auxC" + auxConsulta);
+         
+       
             PreparedStatement preSt = connection.prepareStatement(auxConsulta);
             preSt.setString(1, chat.getIdChat().toString());
-//            if (arrListEtiquetas != null) {
-//                for (int i = 0; i < arrListEtiquetas.size(); i++) {
-//                    preSt.setInt(i + 2, arrListEtiquetas.get(i).getIdEtiqueta());
-//
-//                }
-//            }
 
-            //System.out.println("prueba rs = " + preSt);
             ResultSet rs = preSt.executeQuery();
 
             while (rs.next()) {
@@ -319,20 +169,7 @@ public class SQL_Mensaje {
 
     }
 
-    /**
-     * Metodo que devuelve las mensajes que coinciden con una buasqueda
-     *
-     * @param BusquedaNombre
-     * @return
-     */
-//    public static ArrayList<Mensaje> getMensajes(String BusquedaNombre) {
-//        return getMensajesFiltradas(BusquedaNombre, null);
-//
-//    }
-//    public static ArrayList<Mensaje> getMensajes() {
-//        return getMensajes("");
-//
-//    }
+
 public static Mensaje getMensaje(String idMensaje) {
         
         Mensaje aux = null;

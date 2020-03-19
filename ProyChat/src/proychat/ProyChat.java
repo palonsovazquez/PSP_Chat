@@ -31,23 +31,12 @@ public static String idUsuario = "87d5564e-51e1-4fb2-ab25-760818521ea7";
      */
     public static void main(String[] args) throws SQLException {
         
-       // SQLConnection.getInstance().crearDefaults();
-        //SQLConnection.getInstance().EjecutarSQLFile(new File("data/creacionTablas.sql"));
+     
         
       
         new Login().setVisible(true);
         
         
-//       Mensaje x = new Mensaje(new Usuario(), new Chat(), "dasfsaedfasdfasdf",GregorianCalendar.getInstance());
-//        System.out.println(x);
-//        Chat chat = new Chat("87d5564e-51e1-4fb2-ab25-760818521ea6",new ArrayList<Usuario>());
-//        System.out.println("chat"+chat);
-//        ArrayList<Usuario> s =SQL_ChatsUsuarios.getUsuariosChat(chat);
-//        System.out.println("sss"+s.size());
-//        for(Usuario us : s){
-//           System.out.println(us);
-//       
-//       }
     }
     
 }

@@ -70,14 +70,11 @@ public class ClientReceive extends Thread {
             os = clienteSocket.getOutputStream();
             is = clienteSocket.getInputStream();
             System.out.println(mensa+ "\nres1"+LibreriaSockets.escribirMensaje(os, mensa));
-//            Usuario x = ComunicationJsonParser.importUser(LibreriaSockets.leerMensaje(clienteSocket));
-//            System.out.println("x" +x);
-//            System.out.println("Mensaje enviado");
-//            SQL_Usuario.añadirUsuario(x);
+
             
             do{
                
-                //LibreriaSockets.escribirMensaje(clienteSocket, "adfasdfs");
+                
                 String json = LibreriaSockets.leerMensaje(is);
                
                 if (json != null) {

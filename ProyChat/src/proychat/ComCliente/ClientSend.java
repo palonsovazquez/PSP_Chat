@@ -46,38 +46,34 @@ public  class ClientSend extends Thread {
 public synchronized void añadirMensaje(String json){
     
         mensajesPendientes.add(json);
-        //System.out.println("mens:"+mensajesPendientes.get(mensajesPendientes.size()-1));
+     
         
         
     }
     public void run() {
         try {
 
-            //System.out.println("Creando socket cliente");
+            System.out.println("Creando socket cliente");
             Socket clienteSocket = new Socket();
-            //System.out.println("Estableciendo la conexi�n"+ip+":"+puerto);
+            System.out.println("Estableciendo la conexi�n"+ip+":"+puerto);
 
             InetSocketAddress addr = new InetSocketAddress(ip, puerto);
-            //System.out.println(addr);
+            System.out.println(addr);
             clienteSocket.connect(addr);
 
-            //System.out.println("Enviando id");
+            System.out.println("Enviando id");
 
             String mensa = user.getIdUsuario().toString();
-            //System.out.println("id = "+mensa);
+           
             os = clienteSocket.getOutputStream();
             is = clienteSocket.getInputStream();
 
-            //System.out.println(mensa + "\nres0" + LibreriaSockets.escribirMensaje(os, mensa));
-            //Usuario x = ComunicationJsonParser.importUser(LibreriaSockets.leerMensaje(clienteSocket));
-//            //System.out.println("x" + x);
-//            //System.out.println("Mensaje enviado");
-//            SQL_Usuario.añadirUsuario(x);
+           
                 LibreriaSockets.escribirMensaje(os,mensa);
             do {
                 
                 if(mensajesPendientes.size() != 0){
-                  //System.out.println("mens2:"+mensajesPendientes.get(0));  
+                 
                         
                 LibreriaSockets.escribirMensaje(os,mensajesPendientes.get(0) );
                 if(mensajesPendientes.get(0).compareTo("bye")==0){
@@ -98,11 +94,11 @@ public synchronized void añadirMensaje(String json){
 
             } while (continuar);
 
-            //System.out.println("Cerrando el socket cliente");
+            System.out.println("Cerrando el socket cliente");
 
             clienteSocket.close();
 
-            //System.out.println("Terminado");
+            System.out.println("Terminado");
         } catch (IOException ex) {
             Logger.getLogger(ClientSend.class.getName()).log(Level.SEVERE, null, ex);
         }
