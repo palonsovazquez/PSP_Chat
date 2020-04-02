@@ -39,7 +39,7 @@ InputStream is;
     public void run() {
         super.run(); 
         
-        
+        try{
         do {
                     String mn = LibreriaSockets.leerMensaje(is);
                    if(mn != null){
@@ -55,7 +55,9 @@ InputStream is;
                 Logger.getLogger(serverTrheatReceive.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-                } while (true);
+                } while (true);}catch(Exception ex){
+                    System.out.println(ex);
+                }
         
         
     }

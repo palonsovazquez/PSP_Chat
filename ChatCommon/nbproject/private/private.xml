@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/model/Chat.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/json/ComunicationJsonParser.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/socketLibraries/LibreriaSockets.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/dao/SQL_Chat.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/ChatCommon.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/dao/SQL_Mensaje.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/dao/SQL_ChatsUsuarios.java</file>
+            <file>file:/home/kazuo/NetBeansProjects/ProyecPorg/cch/ChatCommon/src/chatcommon/dao/SQLConnection.java</file>
+        </group>
+    </open-files>
+</project-private>

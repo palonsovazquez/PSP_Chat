@@ -34,7 +34,10 @@ public class serverTrheatSend extends Thread {
  if(mensajesPendientes.size() != 0){
                    
                         System.out.println("reenviado"+mensajesPendientes.get(0));
-                        LibreriaSockets.escribirMensaje(os,mensajesPendientes.get(0));
+                        try{
+                        LibreriaSockets.escribirMensaje(os,mensajesPendientes.get(0));}
+                        catch(Exception ex){
+                            System.out.println(ex);}
                         
                         mensajesPendientes.remove(0);
                         
